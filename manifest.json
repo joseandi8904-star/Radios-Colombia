@@ -1,20 +1,127 @@
+
 {
   "name": "Radio Colombia Pro",
   "short_name": "RadioCO",
-  "start_url": "index.html",
+  "description": "Escucha las mejores radios colombianas en vivo. RCN, Caracol, La Mega y más.",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#121212",
   "theme_color": "#1DB954",
+  "lang": "es-CO",
+  "dir": "ltr",
+  "categories": ["music", "entertainment", "news"],
   "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "RCN Radio",
+      "short_name": "RCN",
+      "description": "Escuchar RCN Radio",
+      "url": "/index.html?station=rcn",
+      "icons": [{ "src": "icons/rcn-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Caracol Radio",
+      "short_name": "Caracol",
+      "description": "Escuchar Caracol Radio",
+      "url": "/index.html?station=caracol",
+      "icons": [{ "src": "icons/caracol-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "La Mega",
+      "short_name": "Mega",
+      "description": "Escuchar La Mega",
+      "url": "/index.html?station=mega",
+      "icons": [{ "src": "icons/mega-96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/screenshot2.png",
+      "sizes": "720x540",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7"
 }
