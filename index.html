@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Radio Colombia Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1DB954">
+
+<style>
+body {
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background:#121212;
+  color:white;
+}
+header {
+  padding:15px;
+  font-size:22px;
+  font-weight:bold;
+}
+#cover {
+  width:220px;
+  height:220px;
+  border-radius:16px;
+  margin:20px auto;
+  display:block;
+}
+audio {
+  width:90%;
+  margin:auto;
+  display:block;
+}
+.list {
+  padding:15px;
+}
+.radio {
+  display:flex;
+  align-items:center;
+  padding:12px;
+  border-radius:12px;
+  background:#1e1e1e;
+  margin-bottom:10px;
+  cursor:pointer;
+}
+.radio img {
+  width:50px;
+  height:50px;
+  border-radius:8px;
+  margin-right:12px;
+}
+.radio:hover {
+  background:#1DB954;
+  color:black;
+}
+footer {
+  text-align:center;
+  padding:15px;
+  opacity:.7;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎧 Radio Colombia</header>
+
+<img id="cover" src="https://i.imgur.com/ZcLLrkY.jpg">
+
+<audio id="player" controls></audio>
+
+<div class="list">
+  <div class="radio" onclick="play('https://streaming.rcnradio.com/rcnradio','https://upload.wikimedia.org/wikipedia/commons/4/4e/RCN_Radio_logo.png')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/RCN_Radio_logo.png">
+    <div>RCN Radio</div>
+  </div>
+
+  <div class="radio" onclick="play('https://playerservices.streamtheworld.com/api/livestream-redirect/CARACOL_RADIO.mp3','https://upload.wikimedia.org/wikipedia/commons/6/6b/Caracol_Radio_logo.png')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Caracol_Radio_logo.png">
+    <div>Caracol Radio</div>
+  </div>
+
+  <div class="radio" onclick="play('https://streaming.lamega.com.co/lamega.mp3','https://upload.wikimedia.org/wikipedia/commons/1/19/La_Mega_Colombia_logo.png')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/La_Mega_Colombia_logo.png">
+    <div>La Mega</div>
+  </div>
+
+  <div class="radio" onclick="play('https://streaming.radionacional.co/rtvc.mp3','https://upload.wikimedia.org/wikipedia/commons/5/55/Radio_Nacional_de_Colombia_logo.png')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Radio_Nacional_de_Colombia_logo.png">
+    <div>Radio Nacional</div>
+  </div>
+</div>
+
+<footer>
+  📻 Radios colombianas en vivo  
+  <br>
+  ☕ Apóyame – Nequi / PayPal
+</footer>
+
+<script>
+const player = document.getElementById("player");
+const cover = document.getElementById("cover");
+
+function play(url,img){
+  player.src = url;
+  cover.src = img;
+  player.play();
+
+  // 🔥 Punto ideal para mostrar INTERSTITIAL ADMOB
+  if (window.AndroidAd) {
+    AndroidAd.showInterstitial();
+  }
+}
+
+// PWA
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
